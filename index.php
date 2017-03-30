@@ -2,443 +2,314 @@
 /**
  * CodeIgniter
  *
+ * An open source application development framework for PHP
  *
- * @author	Manuel Irrazabal
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package	CodeIgniter
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
+ * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
  * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
+ * @link	https://codeigniter.com
  * @since	Version 1.0.0
  * @filesource
  */
 
+/*
+ *---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ *---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ */
+	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
-// Get the email form and processing.... 
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
+switch (ENVIRONMENT)
+{
+	case 'development':
+		error_reporting(-1);
+		ini_set('display_errors', 1);
+	break;
 
-if (isset($_POST["submit"])) {
-	
-	$name = $_POST['name'];
-	$email = $_POST['email'];
-	$phone = $_POST['phone'];
-	$message = $_POST['message'];
-	$human = intval($_POST['human']);
-
-	$from = 'Demo Contact Form'; 
-	$to = 'manuirrazabal@manuirrazabal.com'; 
-	$subject = 'Message from Contact Demo ';
-	
-	$body = "From: $name\n E-Mail: $email\n Message:\n $message";
-
-	// Check if name has been entered
-	if (!$_POST['name']) {
-		$errName = 'Please enter your name';
-	}
-	
-	// Check if email has been entered and is valid
-	if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-		$errEmail = 'Please enter a valid email address';
-	}
-	
-	//Check if message has been entered
-	if (!$_POST['message']) {
-		$errMessage = 'Please enter your message';
-	}
-	//Check if simple anti-bot test is correct
-	if ($human !== 7) {
-		$errHuman = 'Your anti-spam is incorrect';
-	}
-
-// If there are no errors, send the email
-	if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
-		if (mail ($to, $subject, $body, $from)) {
-			$result='<div class="alert alert-success">Thank You! I will be in touch</div>';
-		} else {
-			$result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
+	case 'testing':
+	case 'production':
+		ini_set('display_errors', 0);
+		if (version_compare(PHP_VERSION, '5.3', '>='))
+		{
+			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
 		}
-	}
+		else
+		{
+			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
+		}
+	break;
+
+	default:
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'The application environment is not set correctly.';
+		exit(1); // EXIT_ERROR
 }
 
+/*
+ *---------------------------------------------------------------
+ * SYSTEM DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" directory.
+ * Set the path if it is not in the same directory as this file.
+ */
+	$system_path = 'system';
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * directory than the default one you can set its name here. The directory
+ * can also be renamed or relocated anywhere on your server. If you do,
+ * use an absolute (full) server path.
+ * For more info please see the user guide:
+ *
+ * https://codeigniter.com/user_guide/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ */
+	$application_folder = 'application';
+
+/*
+ *---------------------------------------------------------------
+ * VIEW DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * If you want to move the view directory out of the application
+ * directory, set the path to it here. The directory can be renamed
+ * and relocated anywhere on your server. If blank, it will default
+ * to the standard location inside your application directory.
+ * If you do move this, use an absolute (full) server path.
+ *
+ * NO TRAILING SLASH!
+ */
+	$view_folder = '';
 
 
-?>
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here. For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT: If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller. Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ */
+	// The directory name, relative to the "controllers" directory.  Leave blank
+	// if your controller is not in a sub-directory within the "controllers" one
+	// $routing['directory'] = '';
+
+	// The controller class file name.  Example:  mycontroller
+	// $routing['controller'] = '';
+
+	// The controller function you wish to be called.
+	// $routing['function']	= '';
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	
-	<!-- MODIFY LATER. -->
-	<meta http-equiv="Content-Language" content="EN">
-	<meta name="submission" content="http://www..cl/">
-	<meta name="revisit-after" content="7 days">
-	<meta name="robots" content="all">
-	<meta http-equiv="expires" content="0">
-	<meta name="distribution" content="Global">
-	<meta name="copyright" content="Monumento.cl">
-	<meta name="expires" content="never">
-	<meta name="author" content="Xside.cl">
-	<meta name="doc-type" content="web page">
-	<link rel="shortcut icon" href="public/images/favicon.png" type="image/png">
-
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="public/js/bootstrap.min.js"></script>
-
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-
-	<!-- 
-	<script src="public/js/bootstrap.carousel.js"></script>-->
-	<script src="public/js/document_ready.js"></script> 
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ */
+	// $assign_to_config['name_of_config_item'] = 'value of config item';
 
 
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
-	<style type="text/css">
-		body{
-			font-family: 'Ubuntu', sans-serif;
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
+
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
+
+	// Set the current directory correctly for CLI requests
+	if (defined('STDIN'))
+	{
+		chdir(dirname(__FILE__));
+	}
+
+	if (($_temp = realpath($system_path)) !== FALSE)
+	{
+		$system_path = $_temp.DIRECTORY_SEPARATOR;
+	}
+	else
+	{
+		// Ensure there's a trailing slash
+		$system_path = strtr(
+			rtrim($system_path, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		).DIRECTORY_SEPARATOR;
+	}
+
+	// Is the system path correct?
+	if ( ! is_dir($system_path))
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your system folder path does not appear to be set correctly. Please open the following file and correct this: '.pathinfo(__FILE__, PATHINFO_BASENAME);
+		exit(3); // EXIT_CONFIG
+	}
+
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+	// The name of THIS file
+	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+
+	// Path to the system directory
+	define('BASEPATH', $system_path);
+
+	// Path to the front controller (this file) directory
+	define('FCPATH', dirname(__FILE__).DIRECTORY_SEPARATOR);
+
+	// Name of the "system" directory
+	define('SYSDIR', basename(BASEPATH));
+
+	// The path to the "application" directory
+	if (is_dir($application_folder))
+	{
+		if (($_temp = realpath($application_folder)) !== FALSE)
+		{
+			$application_folder = $_temp;
 		}
-
-		h1{
-			color: #f4511e !important;
+		else
+		{
+			$application_folder = strtr(
+				rtrim($application_folder, '/\\'),
+				'/\\',
+				DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+			);
 		}
-		.navbar, .back_vancouver{
-			background-color: #272822;
+	}
+	elseif (is_dir(BASEPATH.$application_folder.DIRECTORY_SEPARATOR))
+	{
+		$application_folder = BASEPATH.strtr(
+			trim($application_folder, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		);
+	}
+	else
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your application folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
+		exit(3); // EXIT_CONFIG
+	}
+
+	define('APPPATH', $application_folder.DIRECTORY_SEPARATOR);
+
+	// The path to the "views" directory
+	if ( ! isset($view_folder[0]) && is_dir(APPPATH.'views'.DIRECTORY_SEPARATOR))
+	{
+		$view_folder = APPPATH.'views';
+	}
+	elseif (is_dir($view_folder))
+	{
+		if (($_temp = realpath($view_folder)) !== FALSE)
+		{
+			$view_folder = $_temp;
 		}
-
-		.navbar li a, .navbar .navbar-brand {
-			color: #fff !important;
+		else
+		{
+			$view_folder = strtr(
+				rtrim($view_folder, '/\\'),
+				'/\\',
+				DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+			);
 		}
-		.navbar-nav li.active a {
-			color: #f4511e !important;
-			
-		}
-		.navbar-nav li a:hover{
-			color: #f4511e !important;
-			background-color: #fff !important;
-		}
+	}
+	elseif (is_dir(APPPATH.$view_folder.DIRECTORY_SEPARATOR))
+	{
+		$view_folder = APPPATH.strtr(
+			trim($view_folder, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		);
+	}
+	else
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your view folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
+		exit(3); // EXIT_CONFIG
+	}
 
-		.navbar-default .navbar-toggle, .text_white{			
-			color: #fff !important;
-		}
+	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
 
-		.header-back{
-			background: #000 url("public/images/back_index_flip.png");
-			color: #fff;
-		}		
-
-		.header-contentX{
-			padding: 150px 0;
-		}
-
-		.extra-margin{
-			padding-top: 40px;
-			padding-bottom: 100px;
-		}
-
-		.thumbnail {
-			padding: 0 0 15px 0;
-			border: none;
-			border-radius: 0;
-		}
-
-		.thumbnail:hover{
-			border: #f4511e 1px solid;
-		}
-
-		.thumbnail img {
-			width: 100%;
-			height: 100%;
-			margin-bottom: 10px;
-		}
-
-		.footer{
-			background-color: #272822;
-			color: #fff !important;
-			font-size: 10px;
-			height: 40px;
-			padding-top: 15px;
-		}
-		.footer p span{
-			color: #f4511e !important;
-		}
-
-		/*.back_vancouver{
-			background: #FFF url("public/images/back_vancouver.jpg") fixed no-repeat;
-		}*/
-
-		@keyframes slide {
-		    0% {
-		      opacity: 0;
-		      transform: translateY(70%);
-		    } 
-		    100% {
-		      opacity: 1;
-		      transform: translateY(0%);
-		    }
-		  }
-		  @-webkit-keyframes slide {
-		    0% {
-		      opacity: 0;
-		      -webkit-transform: translateY(70%);
-		    } 
-		    100% {
-		      opacity: 1;
-		      -webkit-transform: translateY(0%);
-		    }
-		  }
-		  @media screen and (max-width: 768px) {
-		    .col-sm-4 {
-		      text-align: center;
-		      margin: 25px 0;
-		    }
-		    .btn-lg {
-		        width: 100%;
-		        margin-bottom: 35px;
-		    }
-		  }
-		  @media screen and (max-width: 480px) {
-		    .logo {
-		        font-size: 150px;
-		    }
-		  }
-
-	</style>
-
-	<script>
-		$(document).ready(function(){
-		  // Add smooth scrolling to all links in navbar + footer link
-		  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-		    // Make sure this.hash has a value before overriding default behavior
-		    if (this.hash !== "") {
-		      // Prevent default anchor click behavior
-		      event.preventDefault();
-
-		      // Store hash
-		      var hash = this.hash;
-
-		      // Using jQuery's animate() method to add smooth page scroll
-		      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-		      $('html, body').animate({
-		        scrollTop: $(hash).offset().top
-		      }, 900, function(){
-		   
-		        // Add hash (#) to URL when done scrolling (default click behavior)
-		        window.location.hash = hash;
-		      });
-		    } // End if
-		  });
-		  
-		  $(window).scroll(function() {
-		    $(".slideanim").each(function(){
-		      var pos = $(this).offset().top;
-
-		      var winTop = $(window).scrollTop();
-		        if (pos < winTop + 600) {
-		          $(this).addClass("slide");
-		        }
-		    });
-		  });
-		})
-		</script>
-
-	<title>Manu Irrazabal</title>
-</head>
-<body data-spy="scroll" data-target=".navbar" data-offset="60">
-
-
-	<div class="jumbotron text-left header-back">
-		<nav class="navbar navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>                        
-					</button>
-			    	<a class="navbar-brand" href="#"><img src="public/images/logo.png" width="200" /></a>
-			    </div>
-				<div id="navbar" class="collapse navbar-collapse navbar-right">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#Home">Home</a></li>
-						<li><a href="#about">About me</a></li>
-						<li><a href="#mywork">My Work</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div>
-		</nav>
-		<div class="container header-contentX" id="Home">
-			<h1>Manuel Irrazabal</h1> 
-		  	<p>Don’t try to be original, just try to be good.</p> 
-		</div>
-	</div>
-
-
-
-	<div class="container extra-margin" id="mywork">
-		<div class="row">
-			<div class="col-sm-12"><h1>My Work</h1><br /></div>
-
-			<div class="col-sm-3 text-center">
-				<div class="thumbnail">
-					<img src="public/images/monumento_mini.jpg" alt="Monumento" width="300" height="240">
-					<p><strong>Monumento Propiedades</strong></p>
-					<p>Real Estate Company</p>
-				</div>
-			</div>
-			<div class="col-sm-3 text-center">
-				<div class="thumbnail">
-					<img src="public/images/reye_mini.jpg" alt="Reye" width="300" height="240">
-					<p><strong>Reye</strong></p>
-					<p>Building Management</p>
-				</div>
-			</div>
-			<div class="col-sm-3 text-center">
-				<div class="thumbnail">
-					<img src="public/images/xside_mini.jpg" alt="Xside" width="300" height="240">
-					<p><strong>Xside</strong></p>
-					<p>Wed Page Developers</p>
-				</div>
-			</div>
-			<div class="col-sm-3 text-center">
-				<div class="thumbnail">
-					<img src="public/images/contaflex_mini.jpg" alt="Contaflex" width="300" height="240">
-					<p><strong>Contaflex</strong></p>
-					<p>Accountant System</p>
-				</div>
-			</div>
-			<div class="col-sm-3 text-center">
-				<div class="thumbnail">
-					<img src="public/images/verbodivino_mini.jpg" alt="Libreria Verbo Divino" width="300" height="240">
-					<p><strong>Libreria Verbo Divino (2013)</strong></p>
-					<p>Library</p>
-				</div>
-			</div>
-
-			<div class="col-sm-3 text-center">
-				<div class="thumbnail">
-					<img src="public/images/verbodivino2_mini.jpg" alt="Libreria Verbo Divino" width="300" height="240">
-					<p><strong>Libreria Verbo Divino (2015)</strong></p>
-					<p>Library</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="back_vancouver">
-		<div class="container extra-margin" id="about">
-			<div class="row">
-				<div class="col-sm-12">
-					<h1>About me?</h1>
-					<br><br>
-				</div>
-				<div class="col-sm-3">
-					<img src="public/images/about_font.jpg" class="img-circle" alt="Cinque Terre" width="200" height="200">
-				</div>
-				<div class="col-sm-4">
-					<p class="text_white">
-					I am normal and simple guy, runner and hiking lover, amateur photographer who enjoy the nature and socialized person.</p>
-
-					<p class="text_white">
-					Professionally speaking I am proactive, responsible, who loves new challenges, ability to focus under pressure, self starter and great team worker.
-					</p>				
-				</div>
-				<div class="col-sm-5">
-					<p class="text_white">Engineering informatics (Software Enginner), Instituto Profesional AIEP ( Santiago, Chile) 2005 - 2011</p>
-					<p class="text_white">Diploma project administration and management, Escuela de Negocios IEDE 2011</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-	<div class="container extra-margin" id="contact">
-		<div class="row">
-			<div class="col-sm-12"><h1>Contact Me</h1></div>
-			<div class="col-sm-5" style="padding-top: 50px;">
-				<p>Feel free to contact to me if you are interested in my work, <br />give me some feedback or just say hello.</p>
-
-				<!-- Social Media Links -->
-				<br />
-				<p><img src="public/images/location.png" width="20"> Vancouver, BC. Canada</p>
-				<p><img src="public/images/mail_icon.png" width="20"> manuirrazabal@manuirrazabal.com</p>
-			</div>
-
-			<div class="col-sm-7">
-				<form name="Frm-SendMail" class="form-horizontal" role="form" method="post" action="index.php">
-					<div class="form-group">
-						<label for="name" class="col-sm-3">Name</label>
-						 <div class="col-sm-9">
-						 	<input type="text" class="form-control" id="name" name="name"  placeholder="Name">
-						 	<?php echo "<p class='text-danger'>$errName</p>";?>
-						</div>
-						 
-					</div>
-					<div class="form-group">
-						<label for="Email" class="col-sm-3">Email</label>
-						<div class="col-sm-9">
-							<input type="email" class="form-control" id="Email" name="email" placeholder="Email">
-							<?php echo "<p class='text-danger'>$errEmail</p>";?>
-						</div>
-						
-					</div>
-					<div class="form-group">
-						<label for="Email" class="col-sm-3">Phone</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="Phone" name="phone" placeholder="Phone Number">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="Message" class="col-sm-3">Message</label>
-						<div class="col-sm-9">
-							<textarea name="message" id="Message" class="input-md round form-control" style="height: 84px;" placeholder="Message"></textarea>
-							<?php echo "<p class='text-danger'>$errMessage</p>";?>
-						</div>
-					</div>	
-					<div class="form-group">
-						<label for="human" class="col-sm-3">2 + 5 = ?</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
-							<?php echo "<p class='text-danger'>$errHuman</p>";?>
-						</div>
-					</div>			
-					<div class="form-group text-right"><button type="submit" name="submit" lass="btn btn-default">Submit</button></div>
-					<div class="form-group">
-						<div class="col-sm-10 col-sm-offset-2">
-							<?php echo $result; ?>	
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
-
-	<footer class="footer">
-      	<div class="container">
-      		<div class="row">
-      			<div class="col-sm-11">
-        			<p><span> &lt;/&gt; </span> Manuel Irrazabal &copy; 2017 <span> &lt;/&gt; </span></p>
-        		</div>
-        		<div class="col-sm-1">
-        			<a href="www.linkedin.com/in/manuel-irrazabal" target="_blank" style="margin-right: 5px;"><img src="public/images/linkedin1_icon.png" width="21"></a>
-        			<a href="https://www.instagram.com/manuirrazabal" target="_blank"><img src="public/images/instagram1_icon.png" width="21"></a>
-        		</div>
-        	</div>
-      	</div>
-    </footer>
-
-</body>
-</html>
-
-
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ */
+require_once BASEPATH.'core/CodeIgniter.php';
