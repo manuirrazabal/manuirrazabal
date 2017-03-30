@@ -12,6 +12,54 @@
  * @filesource
  */
 
+
+// Get the email form and processing.... 
+
+if (isset($_POST["submit"])) {
+	
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$phone = $_POST['phone'];
+	$message = $_POST['message'];
+	$human = intval($_POST['human']);
+
+	$from = 'Demo Contact Form'; 
+	$to = 'manuirrazabal@manuirrazabal.com'; 
+	$subject = 'Message from Contact Demo ';
+	
+	$body = "From: $name\n E-Mail: $email\n Message:\n $message";
+
+	// Check if name has been entered
+	if (!$_POST['name']) {
+		$errName = 'Please enter your name';
+	}
+	
+	// Check if email has been entered and is valid
+	if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+		$errEmail = 'Please enter a valid email address';
+	}
+	
+	//Check if message has been entered
+	if (!$_POST['message']) {
+		$errMessage = 'Please enter your message';
+	}
+	//Check if simple anti-bot test is correct
+	if ($human !== 7) {
+		$errHuman = 'Your anti-spam is incorrect';
+	}
+
+// If there are no errors, send the email
+	if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
+		if (mail ($to, $subject, $body, $from)) {
+			$result='<div class="alert alert-success">Thank You! I will be in touch</div>';
+		} else {
+			$result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
+		}
+	}
+}
+
+
+
 ?>
 
 
@@ -238,13 +286,13 @@
 
 	<div class="container extra-margin" id="mywork">
 		<div class="row">
-			<div class="col-sm-12"><h1>Proyects</h1><br /></div>
+			<div class="col-sm-12"><h1>My Work</h1><br /></div>
 
 			<div class="col-sm-3 text-center">
 				<div class="thumbnail">
 					<img src="public/images/monumento_mini.jpg" alt="Monumento" width="300" height="240">
 					<p><strong>Monumento Propiedades</strong></p>
-					<p>Real State Company</p>
+					<p>Real Estate Company</p>
 				</div>
 			</div>
 			<div class="col-sm-3 text-center">
@@ -318,7 +366,7 @@
 		<div class="row">
 			<div class="col-sm-12"><h1>Contact Me</h1></div>
 			<div class="col-sm-5" style="padding-top: 50px;">
-				<p>Feel free to contact to me if you are interesting in my job, <br />give me some feed back or just say hello.</p>
+				<p>Feel free to contact to me if you are interested in my work, <br />give me some feedback or just say hello.</p>
 
 				<!-- Social Media Links -->
 				<br />
@@ -327,24 +375,49 @@
 			</div>
 
 			<div class="col-sm-7">
-				<form name="Frm-SendMail" class="form-horizontal">
+				<form name="Frm-SendMail" class="form-horizontal" role="form" method="post" action="index.php">
 					<div class="form-group">
 						<label for="name" class="col-sm-3">Name</label>
-						 <div class="col-sm-9"><input type="text" class="form-control" id="name" placeholder="Name"></div>
+						 <div class="col-sm-9">
+						 	<input type="text" class="form-control" id="name" name="name"  placeholder="Name">
+						 	<?php echo "<p class='text-danger'>$errName</p>";?>
+						</div>
+						 
 					</div>
 					<div class="form-group">
 						<label for="Email" class="col-sm-3">Email</label>
-						<div class="col-sm-9"><input type="email" class="form-control" id="Email" placeholder="Email"></div>
+						<div class="col-sm-9">
+							<input type="email" class="form-control" id="Email" name="email" placeholder="Email">
+							<?php echo "<p class='text-danger'>$errEmail</p>";?>
+						</div>
+						
 					</div>
 					<div class="form-group">
 						<label for="Email" class="col-sm-3">Phone</label>
-						<div class="col-sm-9"><input type="text" class="form-control" id="Phone" placeholder="Phone Number"></div>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="Phone" name="phone" placeholder="Phone Number">
+						</div>
 					</div>
 					<div class="form-group">
 						<label for="Message" class="col-sm-3">Message</label>
-						<div class="col-sm-9"><textarea name="message" id="Message" class="input-md round form-control" style="height: 84px;" placeholder="Message"></textarea></div>
-					</div>				
-					<div class="form-group text-right"><button type="submit" class="btn btn-default">Submit</button></div>
+						<div class="col-sm-9">
+							<textarea name="message" id="Message" class="input-md round form-control" style="height: 84px;" placeholder="Message"></textarea>
+							<?php echo "<p class='text-danger'>$errMessage</p>";?>
+						</div>
+					</div>	
+					<div class="form-group">
+						<label for="human" class="col-sm-3">2 + 5 = ?</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
+							<?php echo "<p class='text-danger'>$errHuman</p>";?>
+						</div>
+					</div>			
+					<div class="form-group text-right"><button type="submit" name="submit" lass="btn btn-default">Submit</button></div>
+					<div class="form-group">
+						<div class="col-sm-10 col-sm-offset-2">
+							<?php echo $result; ?>	
+						</div>
+					</div>
 				</form>
 			</div>
 		</div>
@@ -364,8 +437,6 @@
         	</div>
       	</div>
     </footer>
-
-	
 
 </body>
 </html>
