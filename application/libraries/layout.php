@@ -101,7 +101,7 @@ class Layout
 			$this->CI->load->view($element, compact('content_for_layout'), false);
 	}
 	
-	public function alernative_view($view = null, $data = null, $return = false)
+	public function alternative_view($view = null, $data = null, $return = false)
 	{
 		//$element			= "elements/{$view}";
 		$element			= "{$view}";

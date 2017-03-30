@@ -20,11 +20,11 @@
 
 	<div class="container extra-margin" id="monumento_propiedades">
 		<div class="row">
-			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h1>Monumento Propiedades</h1><br /></div>
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h1>Reye</h1><br /></div>
 
 			<div class="col-sm-5 col-xs-12 col-md-5 col-lg-5">
-				<p>Real Estate Company <br /> Location, Santiago, Chile</p>
-				<p>www.monumento.cl</p>
+				<p>Building management<br /> Location, Santiago, Chile</p>
+				<p>www.reye.cl</p>
 				<br />
 				<p>
 				<!-- Add Description Later. -->
@@ -35,44 +35,43 @@
 			<div class="col-sm-7 col-xs-12 col-md-7 col-lg-7">
 				<div class="row">
 					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview_600.jpg">
-							<img src="public/images/monumento_preview_300.jpg" alt="Monumento" width="300" >
+						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/reye_preview_600.jpg">
+							<img src="public/images/reye_preview_300.jpg" alt="Reye" width="300" >
 						</a>
 					</div>
 					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview2_600.jpg">
-							<img src="public/images/monumento_preview2_300.jpg" alt="Monumento 2" width="300" >
+						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/reye_preview2_600.jpg">
+							<img src="public/images/reye_preview2_300.jpg" alt="Reye 2" width="300" >
 						</a>
 					</div>
+					
 					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview3_600.jpg">
-							<img src="public/images/monumento_preview3_300.jpg" alt="Monumento 2" width="300" >
+						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/reye_preview3_600.jpg">
+							<img src="public/images/reye_preview3_300.jpg" alt="Reye " width="300" >
 						</a>
 					</div>
-				
-				
+				</div>
+				<div class="row">	
 					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview4_600.jpg">
-							<img src="public/images/monumento_preview4_300.jpg" alt="Monumento 2" width="300" >
+						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/reye_preview4_600.jpg">
+							<img src="public/images/reye_preview4_300.jpg" alt="Reye 3" width="300" >
 						</a>
-					</div>
-					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview5_600.jpg">
-							<img src="public/images/monumento_preview5_300.jpg" alt="Monumento 2" width="300" >
-						</a>
-					</div>
+					</div>				
+					
+					
 				</div>				
 			</div>
 		</div>
+		
 	</div>
-
 	<div class="row extra-margin text-center">
 		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-			
-			<a href="<?php echo base_url('index');?>" class="pagination"> Index </a>
-			<a href="<?php echo base_url('reye'); ?>" class="pagination"> Next Project  >> </a>
+			<a href="<?php echo base_url('monumento_propiedades'); ?>" class="pagination"> <<  Back Project</a>
+			<a href="<?php echo base_url('index'); ?>" class="pagination"> Index </a>
+			<a href="<?php echo base_url('xside'); ?>" class="pagination"> Next Project  >> </a>
 		</div>
 	</div>
+	
 
     <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

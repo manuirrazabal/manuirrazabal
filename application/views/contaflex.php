@@ -18,13 +18,12 @@
 
 
 
-	<div class="container extra-margin" id="monumento_propiedades">
+	<div class="container extra-margin" id="xside">
 		<div class="row">
-			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h1>Monumento Propiedades</h1><br /></div>
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h1>Contaflex</h1><br /></div>
 
 			<div class="col-sm-5 col-xs-12 col-md-5 col-lg-5">
-				<p>Real Estate Company <br /> Location, Santiago, Chile</p>
-				<p>www.monumento.cl</p>
+				<p>Accountant System<br /> Location, Santiago, Chile</p>
 				<br />
 				<p>
 				<!-- Add Description Later. -->
@@ -35,44 +34,44 @@
 			<div class="col-sm-7 col-xs-12 col-md-7 col-lg-7">
 				<div class="row">
 					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview_600.jpg">
-							<img src="public/images/monumento_preview_300.jpg" alt="Monumento" width="300" >
+						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/contaflex_preview_600.jpg">
+							<img src="public/images/contaflex_preview_300.jpg" alt="Contaflex" width="300" >
 						</a>
 					</div>
 					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview2_600.jpg">
-							<img src="public/images/monumento_preview2_300.jpg" alt="Monumento 2" width="300" >
+						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/contaflex_preview2_600.jpg">
+							<img src="public/images/contaflex_preview2_300.jpg" alt="contaflex 2" width="300" >
+						</a>
+					</div>
+					
+					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
+						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/contaflex_preview3_600.jpg">
+							<img src="public/images/contaflex_preview3_300.jpg" alt="contaflex 3" width="300" >
 						</a>
 					</div>
 					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview3_600.jpg">
-							<img src="public/images/monumento_preview3_300.jpg" alt="Monumento 2" width="300" >
-						</a>
-					</div>
-				
-				
-					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview4_600.jpg">
-							<img src="public/images/monumento_preview4_300.jpg" alt="Monumento 2" width="300" >
+						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/contaflex_preview4_600.jpg">
+							<img src="public/images/contaflex_preview4_300.jpg" alt="contaflex 4" width="300" >
 						</a>
 					</div>
 					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview5_600.jpg">
-							<img src="public/images/monumento_preview5_300.jpg" alt="Monumento 2" width="300" >
+						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/contaflex_preview5_600.jpg">
+							<img src="public/images/contaflex_preview5_300.jpg" alt="contaflex 5" width="300" >
 						</a>
 					</div>
 				</div>				
 			</div>
 		</div>
+		
 	</div>
-
 	<div class="row extra-margin text-center">
 		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-			
-			<a href="<?php echo base_url('index');?>" class="pagination"> Index </a>
-			<a href="<?php echo base_url('reye'); ?>" class="pagination"> Next Project  >> </a>
+			<a href="<?php echo base_url('xside'); ?>" class="pagination"> <<  Back Project</a>
+			<a href="<?php echo base_url('index'); ?>" class="pagination"> Index </a>
+			<a href="<?php echo base_url('verbo_divino_2012'); ?>" class="pagination"> Next Project  >> </a>
 		</div>
 	</div>
+	
 
     <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

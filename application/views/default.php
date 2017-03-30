@@ -39,37 +39,47 @@ $errName	= isset($errName)?$errName:null;
 			</div>
 			<div class="col-sm-3 text-center">
 				<div class="thumbnail">
-					<a href="<?php echo base_url('monumento-propiedades'); ?>"><img src="<?php echo base_url().'public/';?>images/reye_mini.jpg" alt="Reye" width="300" height="240"></a>
+					<a href="<?php echo base_url('reye'); ?>">
+						<img src="<?php echo base_url().'public/';?>images/reye_mini.jpg" alt="Reye" width="300" height="240"></a>
 					<p><strong>Reye</strong></p>
 					<p>Building Management</p>
 				</div>
 			</div>
 			<div class="col-sm-3 text-center">
 				<div class="thumbnail">
-					<img src="<?php echo base_url().'public/';?>images/xside_mini.jpg" alt="Xside" width="300" height="240">
+					<a href="<?php echo base_url('xside'); ?>">
+						<img src="<?php echo base_url('').'public/';?>images/xside_mini.jpg" alt="Xside" width="300" height="240">
+					</a>
 					<p><strong>Xside</strong></p>
-					<p>Wed Page Developers</p>
+					<p>Web Page Developers</p>
 				</div>
 			</div>
 			<div class="col-sm-3 text-center">
 				<div class="thumbnail">
-					<img src="<?php echo base_url().'public/';?>images/contaflex_mini.jpg" alt="Contaflex" width="300" height="240">
+					<a href="<?php echo base_url('contaflex'); ?>">
+						<img src="<?php echo base_url().'public/';?>images/contaflex_mini.jpg" alt="Contaflex" width="300" height="240">
+					</a>
 					<p><strong>Contaflex</strong></p>
 					<p>Accountant System</p>
 				</div>
 			</div>
 			<div class="col-sm-3 text-center">
-				<div class="thumbnail">
-					<img src="<?php echo base_url().'public/';?>images/verbodivino_mini.jpg" alt="Libreria Verbo Divino" width="300" height="240">
-					<p><strong>Libreria Verbo Divino (2013)</strong></p>
+				<div class="thumbnail">					
+					<a href="<?php echo base_url('verbo_divino_2012'); ?>">
+						<img src="<?php echo base_url().'public/';?>images/verbodivino_mini.jpg" alt="Libreria Verbo Divino" width="300" height="240">
+					</a>
+					<p><strong>Verbo Divino's Library (2012)</strong></p>
 					<p>Library</p>
 				</div>
 			</div>
 
 			<div class="col-sm-3 text-center">
 				<div class="thumbnail">
-					<img src="<?php echo base_url().'public/';?>images/verbodivino2_mini.jpg" alt="Libreria Verbo Divino" width="300" height="240">
-					<p><strong>Libreria Verbo Divino (2015)</strong></p>
+					<a href="<?php echo base_url('verbo_divino_2015'); ?>">
+						
+						<img src="<?php echo base_url().'public/';?>images/verbodivino2_mini.jpg" alt="Libreria Verbo Divino" width="300" height="240">
+					</a>
+					<p><strong>Verbo Divino's Library (2015)</strong></p>
 					<p>Library</p>
 				</div>
 			</div>
@@ -172,21 +182,6 @@ $errName	= isset($errName)?$errName:null;
 			</div>
 		</div>
 	</div>
-
-
-	<footer class="footer">
-      	<div class="container">
-      		<div class="row">
-      			<div class="col-sm-11">
-        			<p><span> &lt;/&gt; </span> Manuel Irrazabal &copy; 2017 <span> &lt;/&gt; </span></p>
-        		</div>
-        		<div class="col-sm-1">
-        			<a href="www.linkedin.com/in/manuel-irrazabal" target="_blank" style="margin-right: 5px;"><img src="<?php echo base_url().'public/';?>images/linkedin1_icon.png" width="21"></a>
-        			<a href="https://www.instagram.com/manuirrazabal" target="_blank"><img src="<?php echo base_url().'public/';?>images/instagram1_icon.png" width="21"></a>
-        		</div>
-        	</div>
-      	</div>
-    </footer>
 
     <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

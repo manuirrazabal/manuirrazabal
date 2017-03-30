@@ -30,10 +30,6 @@ class Index extends CI_Controller {
 		//$this->session->set_userdata('grupo_controlador', $this->general_model->getMenuGrupo($this->session->userdata('controlador')));
     }
 
-    public function header_information(){
-    	$this->layout->view('header');
-    }
-
 	public function index(){
 		
 
@@ -86,8 +82,9 @@ class Index extends CI_Controller {
 			
 		}
 
-		$this->header_information();
-		$this->layout->view('default', compact("errName", "errEmail", "errMessage", "errHuman", "result", "name", "email", "phone", "message", "human"));
+		$this->layout->view('header');
+		$this->layout->alternative_view('default', compact("errName", "errEmail", "errMessage", "errHuman", "result", "name", "email", "phone", "message", "human"));
+		$this->layout->alternative_view('footer');
 
 
 		

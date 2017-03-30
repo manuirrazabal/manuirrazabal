@@ -18,15 +18,16 @@
 
 
 
-	<div class="container extra-margin" id="monumento_propiedades">
+	<div class="container extra-margin" id="xside">
 		<div class="row">
-			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h1>Monumento Propiedades</h1><br /></div>
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h1>Verbo Divino's Library</h1><br /></div>
 
 			<div class="col-sm-5 col-xs-12 col-md-5 col-lg-5">
-				<p>Real Estate Company <br /> Location, Santiago, Chile</p>
-				<p>www.monumento.cl</p>
+				<p>Religious Library<br /> Location, Santiago, Chile</p>
+				<p>www.libreriaverbodivino.cl</p>
 				<br />
 				<p>
+				Website launched on 2012
 				<!-- Add Description Later. -->
 				</p>
 
@@ -35,44 +36,41 @@
 			<div class="col-sm-7 col-xs-12 col-md-7 col-lg-7">
 				<div class="row">
 					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview_600.jpg">
-							<img src="public/images/monumento_preview_300.jpg" alt="Monumento" width="300" >
+						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/verbodivino2012_preview_600.jpg">
+							<img src="public/images/verbodivino2012_preview_300.jpg" alt="Verbo Divino" width="300" >
 						</a>
 					</div>
 					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview2_600.jpg">
-							<img src="public/images/monumento_preview2_300.jpg" alt="Monumento 2" width="300" >
+						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/verbodivino2012_preview2_600.jpg">
+							<img src="public/images/verbodivino2012_preview2_300.jpg" alt="Verbo Divino 2" width="300" >
 						</a>
 					</div>
+					
 					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview3_600.jpg">
-							<img src="public/images/monumento_preview3_300.jpg" alt="Monumento 2" width="300" >
+						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/verbodivino2012_preview3_600.jpg">
+							<img src="public/images/verbodivino2012_preview3_300.jpg" alt="Verbo Divino 3 " width="300" >
 						</a>
 					</div>
-				
-				
+				</div>
+				<div class="row">	
 					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview4_600.jpg">
-							<img src="public/images/monumento_preview4_300.jpg" alt="Monumento 2" width="300" >
-						</a>
-					</div>
-					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/monumento_preview5_600.jpg">
-							<img src="public/images/monumento_preview5_300.jpg" alt="Monumento 2" width="300" >
+						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/verbodivino2012_preview4_600.jpg">
+							<img src="public/images/verbodivino2012_preview4_300.jpg" alt="Verbo Divino 4 " width="300" >
 						</a>
 					</div>
 				</div>				
 			</div>
 		</div>
+		
 	</div>
-
 	<div class="row extra-margin text-center">
 		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-			
-			<a href="<?php echo base_url('index');?>" class="pagination"> Index </a>
-			<a href="<?php echo base_url('reye'); ?>" class="pagination"> Next Project  >> </a>
+			<a href="<?php echo base_url('contaflex'); ?>" class="pagination"> <<  Back Project</a>
+			<a href="<?php echo base_url('index'); ?>" class="pagination"> Index </a>
+			<a href="<?php echo base_url('verbo_divino_2015'); ?>" class="pagination"> Next Project  >> </a>
 		</div>
 	</div>
+	
 
     <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

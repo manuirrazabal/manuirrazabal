@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Monumento_propiedades extends CI_Controller {
+class Xside extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -25,7 +25,7 @@ class Monumento_propiedades extends CI_Controller {
         $this->layout->setLayout('default');
 		
 		$this->layout->setTitle("Manuirrazabal - ");
-		$this->layout->setDescripcion("Monumento Propiedeades description");	
+		$this->layout->setDescripcion("Xside description");	
 		
 		//$this->session->set_userdata('grupo_controlador', $this->general_model->getMenuGrupo($this->session->userdata('controlador')));
     }
@@ -33,7 +33,7 @@ class Monumento_propiedades extends CI_Controller {
 	public function index(){
 
 		$this->layout->view('header_detail');
-		$this->layout->alternative_view('monumento_propiedades');
+		$this->layout->alternative_view('xside');
 		$this->layout->alternative_view('footer');
 		
 	}
