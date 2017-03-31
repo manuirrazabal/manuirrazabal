@@ -104,7 +104,7 @@ $errName	= isset($errName)?$errName:null;
 					Professionally speaking I am proactive, responsible, who loves new challenges, ability to focus under pressure, self starter and great team worker.
 					</p>				
 				</div>
-				<div class="col-sm-5 col-xs-12">
+				<div class="col-sm-4 col-xs-12">
 					<p class="text_white">Engineering informatics (Software Enginner), Instituto Profesional AIEP ( Santiago, Chile) 2005 - 2011</p>
 					<p class="text_white">Diploma project administration and management, Escuela de Negocios IEDE 2011</p>
 				</div>
