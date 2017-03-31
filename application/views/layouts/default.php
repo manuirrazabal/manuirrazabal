@@ -56,6 +56,11 @@
 			color: #f4511e !important;
 			
 		}
+
+		.navbar-toggle .icon-bar {
+		    background-color: #f4511e !important;
+		}
+
 		.navbar-nav li a:hover{
 			color: #f4511e !important;
 			background-color: #fff !important;
@@ -66,7 +71,7 @@
 		}
 
 		.header-back{
-			background: #000 url("public/images/back_index_flip.png");
+			background: #000 url("public/images/back_index_flip1.png");
 			color: #fff;
 		}		
 
@@ -151,6 +156,16 @@
 		        width: 100%;
 		        margin-bottom: 35px;
 		    }
+
+		    .header-back{
+				background: #272822 url("public/images/back_index_flip3.png") no-repeat;
+			}
+		    
+		    .header-contentX{
+		        padding: 130px 0;
+    			padding-left: 20px;
+    		}
+
 		  }
 		  @media screen and (max-width: 480px) {
 		    .logo {

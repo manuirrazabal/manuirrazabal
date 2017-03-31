@@ -28,16 +28,16 @@ $errName	= isset($errName)?$errName:null;
 
 	<div class="container extra-margin" id="mywork">
 		<div class="row">
-			<div class="col-sm-12"><h1>My Work</h1><br /></div>
+			<div class="col-sm-12 col-xs-12"><h1>My Work</h1><br /></div>
 
-			<div class="col-sm-3 text-center">
+			<div class="col-sm-3 col-xs-6 text-center">
 				<div class="thumbnail">
 					<a href="<?php echo base_url('monumento_propiedades'); ?>"><img src="public/images/monumento_mini.jpg" alt="Monumento" width="300" height="240"></a>
 					<p><strong>Monumento Propiedades</strong></p>
 					<p>Real Estate Company</p>
 				</div>
 			</div>
-			<div class="col-sm-3 text-center">
+			<div class="col-sm-3  col-xs-6 text-center">
 				<div class="thumbnail">
 					<a href="<?php echo base_url('reye'); ?>">
 						<img src="<?php echo base_url().'public/';?>images/reye_mini.jpg" alt="Reye" width="300" height="240"></a>
@@ -45,7 +45,7 @@ $errName	= isset($errName)?$errName:null;
 					<p>Building Management</p>
 				</div>
 			</div>
-			<div class="col-sm-3 text-center">
+			<div class="col-sm-3 col-xs-6 text-center">
 				<div class="thumbnail">
 					<a href="<?php echo base_url('xside'); ?>">
 						<img src="<?php echo base_url('').'public/';?>images/xside_mini.jpg" alt="Xside" width="300" height="240">
@@ -54,7 +54,7 @@ $errName	= isset($errName)?$errName:null;
 					<p>Web Page Developers</p>
 				</div>
 			</div>
-			<div class="col-sm-3 text-center">
+			<div class="col-sm-3  col-xs-6 text-center">
 				<div class="thumbnail">
 					<a href="<?php echo base_url('contaflex'); ?>">
 						<img src="<?php echo base_url().'public/';?>images/contaflex_mini.jpg" alt="Contaflex" width="300" height="240">
@@ -63,7 +63,7 @@ $errName	= isset($errName)?$errName:null;
 					<p>Accountant System</p>
 				</div>
 			</div>
-			<div class="col-sm-3 text-center">
+			<div class="col-sm-3 col-xs-6 text-center">
 				<div class="thumbnail">					
 					<a href="<?php echo base_url('verbo_divino_2012'); ?>">
 						<img src="<?php echo base_url().'public/';?>images/verbodivino_mini.jpg" alt="Libreria Verbo Divino" width="300" height="240">
@@ -73,7 +73,7 @@ $errName	= isset($errName)?$errName:null;
 				</div>
 			</div>
 
-			<div class="col-sm-3 text-center">
+			<div class="col-sm-3 col-xs-6 text-center">
 				<div class="thumbnail">
 					<a href="<?php echo base_url('verbo_divino_2015'); ?>">
 						
@@ -89,14 +89,14 @@ $errName	= isset($errName)?$errName:null;
 	<div class="back_vancouver">
 		<div class="container extra-margin" id="about">
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-sm-12 col-xs-12">
 					<h1>About me?</h1>
 					<br><br>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-4 col-xs-12">
 					<img src="public/images/about_font.jpg" class="img-circle" alt="Cinque Terre" width="200" height="200">
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-4 col-xs-12">
 					<p class="text_white">
 					I am normal and simple guy, runner and hiking lover, amateur photographer who enjoy the nature and socialized person.</p>
 
@@ -104,7 +104,7 @@ $errName	= isset($errName)?$errName:null;
 					Professionally speaking I am proactive, responsible, who loves new challenges, ability to focus under pressure, self starter and great team worker.
 					</p>				
 				</div>
-				<div class="col-sm-5">
+				<div class="col-sm-5 col-xs-12">
 					<p class="text_white">Engineering informatics (Software Enginner), Instituto Profesional AIEP ( Santiago, Chile) 2005 - 2011</p>
 					<p class="text_white">Diploma project administration and management, Escuela de Negocios IEDE 2011</p>
 				</div>
@@ -116,8 +116,8 @@ $errName	= isset($errName)?$errName:null;
 
 	<div class="container extra-margin" id="contact">
 		<div class="row">
-			<div class="col-sm-12"><h1>Contact Me</h1></div>
-			<div class="col-sm-5" style="padding-top: 50px;">
+			<div class="col-sm-12 col-xs-12"><h1>Contact Me</h1></div>
+			<div class="col-sm-5 col-xs-12" style="padding-top: 50px;">
 				<p>Feel free to contact to me if you are interested in my work, <br />give me some feedback or just say hello.</p>
 
 				<!-- Social Media Links -->
@@ -126,7 +126,7 @@ $errName	= isset($errName)?$errName:null;
 				<p><img src="public/images/mail_icon.png" width="20"> manuirrazabal@manuirrazabal.com</p>
 			</div>
 
-			<div class="col-sm-7">
+			<div class="col-sm-7 col-xs-12">
 				<form name="Frm-SendMail" class="form-horizontal" role="form" method="post" action="index.php">
 					<div class="form-group">
 						<div class="col-sm-10 col-sm-offset-2">
