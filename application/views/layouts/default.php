@@ -3,14 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Language" content="EN">	
-	
+	<base href="http://www.manuirrazabal.com/">
 	<meta name="revisit-after" content="7 days">
 	<meta name="robots" content="all">
 	<meta http-equiv="expires" content="0">
 	<meta name="distribution" content="Global">
 	<meta name="copyright" content="manuirrazabal.com">
 	<meta name="expires" content="never">
-	<meta name="author" content="manuirrazabal.com">
+	<meta name="author" content="Manuel Irrazabal">
 	<meta name="doc-type" content="web page">
 	<meta name="keywords" content="PHP Solutions, PHP Softwares, Backend Programming, Php Programming, PHP Freelance,PHP Freelance Vancouver, Low Cost PHP Sotwares, Softwares PHP de bajo costo, Softwares Solutions, Soluciones Informaticas"> <!-- -->
 

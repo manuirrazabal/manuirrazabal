@@ -4,4 +4,4 @@
 User-agent: *
 Disallow: /contributing.md
 Disallow: /composer.json
-Sitemap: http://www.manuirrazbal.com/sitemap.xml
+
