@@ -24,7 +24,7 @@ class Reye extends CI_Controller {
         parent::__construct();
         $this->layout->setLayout('default');
 		
-		$this->layout->setTitle("Manuirrazabal - ");
+		$this->layout->setTitle("Manuirrazabal - Jobs description");
 		$this->layout->setDescripcion("Reye description");	
 		
 		//$this->session->set_userdata('grupo_controlador', $this->general_model->getMenuGrupo($this->session->userdata('controlador')));

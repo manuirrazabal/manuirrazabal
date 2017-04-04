@@ -94,11 +94,11 @@ $errName	= isset($errName)?$errName:null;
 					<br><br>
 				</div>
 				<div class="col-sm-4 col-xs-12">
-					<img src="public/images/about_font.jpg" class="img-circle" alt="Cinque Terre" width="200" height="200">
+					<img src="public/images/about_font.jpg" class="img-circle" alt="It's me" width="200" height="200">
 				</div>
 				<div class="col-sm-4 col-xs-12">
 					<p class="text_white">
-					I am normal and simple guy, runner and hiking lover, amateur photographer who enjoy the nature and socialized person.</p>
+					I am vanilla guy, runner and hiking lover, amateur photographer who enjoy the nature and socialized person.</p>
 
 					<p class="text_white">
 					Professionally speaking I am proactive, responsible, who loves new challenges, ability to focus under pressure, self starter and great team worker.
@@ -122,8 +122,8 @@ $errName	= isset($errName)?$errName:null;
 
 				<!-- Social Media Links -->
 				<br />
-				<p><img src="public/images/location.png" width="20"> Vancouver, BC. Canada</p>
-				<p><img src="public/images/mail_icon.png" width="20"> manuirrazabal@manuirrazabal.com</p>
+				<p><img src="public/images/location.png" alt="my current location"  width="20"> Vancouver, BC. Canada</p>
+				<p><img src="public/images/mail_icon.png" alt="my current contact mail" width="20"> manuirrazabal@manuirrazabal.com</p>
 			</div>
 
 			<div class="col-sm-7 col-xs-12">

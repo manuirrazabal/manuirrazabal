@@ -22,7 +22,7 @@
 		<div class="col-md-6 col-md-offset-3 text-center">
 			<br>
 			<!-- <h4>Bob's Camera Site</h4> -->
-			<p><img src="<?php echo base_url(); ?>public/images/404.png" alt="" width="300" ></p>
+			<p><img src="<?php echo base_url(); ?>public/images/404.png" alt="Opps.. Page Not Found" width="300" ></p>
 
 			<h2><i class="fa fa-exclamation-triangle" style="color:#f4511e;"></i>
 

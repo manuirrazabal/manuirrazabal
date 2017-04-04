@@ -1,19 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Language" content="EN">	
 	
-	<!-- MODIFY LATER. 
-	<meta http-equiv="Content-Language" content="EN">
-	<meta name="submission" content="http://www..cl/">
 	<meta name="revisit-after" content="7 days">
 	<meta name="robots" content="all">
 	<meta http-equiv="expires" content="0">
 	<meta name="distribution" content="Global">
-	<meta name="copyright" content="Monumento.cl">
+	<meta name="copyright" content="manuirrazabal.com">
 	<meta name="expires" content="never">
-	<meta name="author" content="Xside.cl">
-	<meta name="doc-type" content="web page">-->
+	<meta name="author" content="manuirrazabal.com">
+	<meta name="doc-type" content="web page">
+	<meta name="keywords" content="PHP Solutions, PHP Softwares, Backend Programming, Php Programming, PHP Freelance,PHP Freelance Vancouver, Low Cost PHP Sotwares, Softwares PHP de bajo costo, Softwares Solutions, Soluciones Informaticas"> <!-- -->
+
 	<link rel="shortcut icon" href="<?php echo base_url().'public/';?>images/favicon.png" type="image/png">
 
 	<!-- Latest compiled and minified CSS -->
@@ -76,6 +76,8 @@
 		</script>
 
 	<title><?php echo $this->layout->getTitle(); ?></title>
+	<meta name="description" content="<?php echo $this->layout->getDescripcion(); ?>">
+
 
 	<?php echo $this->layout->css; ?> 
 	<?php echo $this->layout->js; ?> 

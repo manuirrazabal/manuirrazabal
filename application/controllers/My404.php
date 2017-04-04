@@ -7,6 +7,7 @@ class My404 extends CI_Controller {
     {
         parent::__construct(); 
         $this->layout->setLayout('default');
+        $this->layout->setTitle("404 Oopss. Page not found");
     } 
 
     public function index() 

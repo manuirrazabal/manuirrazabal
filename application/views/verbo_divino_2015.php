@@ -24,7 +24,7 @@
 
 			<div class="col-sm-5 col-xs-12 col-md-5 col-lg-5">
 				<p>Religious Library<br /> Location, Santiago, Chile</p>
-				<p>www.libreriaverbodivino.cl</p>
+				
 				<br />
 				<p>
 				Website launched on 2015

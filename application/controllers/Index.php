@@ -24,8 +24,8 @@ class Index extends CI_Controller {
         parent::__construct();
         $this->layout->setLayout('default');
 		
-		$this->layout->setTitle("Manuirrazabal - Index");
-		$this->layout->setDescripcion("Manuirrazabal");	
+		$this->layout->setTitle("Manuirrazabal - Sotfware Solutions");
+		$this->layout->setDescripcion("Manuel Irrazabal's portfolio. Here there are some of my jobs so far, Sotfware solutions on PHP, Mysql, HTML5");	
 		
 		//$this->session->set_userdata('grupo_controlador', $this->general_model->getMenuGrupo($this->session->userdata('controlador')));
     }
