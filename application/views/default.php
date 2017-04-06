@@ -26,23 +26,23 @@ $errName	= isset($errName)?$errName:null;
 
 
 
-	<div class="container extra-margin" id="mywork">
+	<div class="container extra-margin" id="<?php echo $this->lang->line('mw_title_tag'); ?>">
 		<div class="row">
-			<div class="col-sm-12 col-xs-12"><h1>My Work</h1><br /></div>
+			<div class="col-sm-12 col-xs-12"><h2><?php echo $this->lang->line('mw_title'); ?></h2><br /></div>
 
 			<div class="col-sm-3 col-xs-6 text-center">
 				<div class="thumbnail">
 					<a href="<?php echo base_url('monumento_propiedades'); ?>"><img src="public/images/monumento_mini.jpg" alt="Monumento" width="300" height="240"></a>
-					<p><strong>Monumento Propiedades</strong></p>
-					<p>Real Estate Company</p>
+					<p><strong><?php echo $this->lang->line('mw_monumento_title'); ?></strong></p>
+					<p><?php echo $this->lang->line('mw_monumento_descr'); ?></p>
 				</div>
 			</div>
 			<div class="col-sm-3  col-xs-6 text-center">
 				<div class="thumbnail">
 					<a href="<?php echo base_url('reye'); ?>">
 						<img src="<?php echo base_url().'public/';?>images/reye_mini.jpg" alt="Reye" width="300" height="240"></a>
-					<p><strong>Reye</strong></p>
-					<p>Building Management</p>
+					<p><strong><?php echo $this->lang->line('mw_reye_title'); ?></strong></p>
+					<p><?php echo $this->lang->line('mw_reye_descr'); ?></p>
 				</div>
 			</div>
 			<div class="col-sm-3 col-xs-6 text-center">
@@ -50,8 +50,8 @@ $errName	= isset($errName)?$errName:null;
 					<a href="<?php echo base_url('xside'); ?>">
 						<img src="<?php echo base_url('').'public/';?>images/xside_mini.jpg" alt="Xside" width="300" height="240">
 					</a>
-					<p><strong>Xside</strong></p>
-					<p>Web Page Developers</p>
+					<p><strong><?php echo $this->lang->line('mw_xside_title'); ?></strong></p>
+					<p><?php echo $this->lang->line('mw_xside_descr'); ?></p>
 				</div>
 			</div>
 			<div class="col-sm-3  col-xs-6 text-center">
@@ -59,8 +59,8 @@ $errName	= isset($errName)?$errName:null;
 					<a href="<?php echo base_url('contaflex'); ?>">
 						<img src="<?php echo base_url().'public/';?>images/contaflex_mini.jpg" alt="Contaflex" width="300" height="240">
 					</a>
-					<p><strong>Contaflex</strong></p>
-					<p>Accountant System</p>
+					<p><strong><?php echo $this->lang->line('mw_conta_title'); ?></strong></p>
+					<p><?php echo $this->lang->line('mw_conta_descr'); ?></p>
 				</div>
 			</div>
 			<div class="col-sm-3 col-xs-6 text-center">
@@ -68,8 +68,8 @@ $errName	= isset($errName)?$errName:null;
 					<a href="<?php echo base_url('verbo_divino_2012'); ?>">
 						<img src="<?php echo base_url().'public/';?>images/verbodivino_mini.jpg" alt="Libreria Verbo Divino" width="300" height="240">
 					</a>
-					<p><strong>Verbo Divino's Library (2012)</strong></p>
-					<p>Library</p>
+					<p><strong><?php echo $this->lang->line('mw_lib2012_title'); ?></strong></p>
+					<p><?php echo $this->lang->line('mw_lib2012_descr'); ?></p>
 				</div>
 			</div>
 
@@ -79,18 +79,18 @@ $errName	= isset($errName)?$errName:null;
 						
 						<img src="<?php echo base_url().'public/';?>images/verbodivino2_mini.jpg" alt="Libreria Verbo Divino" width="300" height="240">
 					</a>
-					<p><strong>Verbo Divino's Library (2015)</strong></p>
-					<p>Library</p>
+					<p><strong><?php echo $this->lang->line('mw_lib2015_title'); ?></strong></p>
+					<p><?php echo $this->lang->line('mw_lib2015_descr'); ?></p>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="back_vancouver">
-		<div class="container extra-margin" id="about">
+		<div class="container extra-margin" id="<?php echo $this->lang->line('AM_title_tag'); ?>">
 			<div class="row">
 				<div class="col-sm-12 col-xs-12">
-					<h1>About me?</h1>
+					<h2><?php echo $this->lang->line('AM_title'); ?></h2>
 					<br><br>
 				</div>
 				<div class="col-sm-4 col-xs-12">
@@ -98,15 +98,16 @@ $errName	= isset($errName)?$errName:null;
 				</div>
 				<div class="col-sm-4 col-xs-12">
 					<p class="text_white">
-					I am vanilla guy, runner and hiking lover, amateur photographer who enjoy the nature and socialized person.</p>
+						<?php echo $this->lang->line('AM_description1'); ?>
+					</p>
 
 					<p class="text_white">
-					Professionally speaking I am proactive, responsible, who loves new challenges, ability to focus under pressure, self starter and great team worker.
+						<?php echo $this->lang->line('AM_description2'); ?>
 					</p>				
 				</div>
 				<div class="col-sm-4 col-xs-12">
-					<p class="text_white">Engineering informatics (Software Enginner), Instituto Profesional AIEP ( Santiago, Chile) 2005 - 2011</p>
-					<p class="text_white">Diploma project administration and management, Escuela de Negocios IEDE 2011</p>
+					<p class="text_white"><?php echo $this->lang->line('AM_carreer1'); ?></p>
+					<p class="text_white"><?php echo $this->lang->line('AM_carreer2'); ?></p>
 				</div>
 			</div>
 		</div>
@@ -114,16 +115,17 @@ $errName	= isset($errName)?$errName:null;
 
 
 
-	<div class="container extra-margin" id="contact">
+	<div class="container extra-margin" id="<?php echo $this->lang->line('CON_title_tag'); ?>">
 		<div class="row">
-			<div class="col-sm-12 col-xs-12"><h1>Contact Me</h1></div>
+			<div class="col-sm-12 col-xs-12"><h2><?php echo $this->lang->line('CON_title'); ?></h2></div>
 			<div class="col-sm-5 col-xs-12" style="padding-top: 50px;">
-				<p>Feel free to contact to me if you are interested in my work, <br />give me some feedback or just say hello.</p>
+				
+				<p><?php echo $this->lang->line('CON_description'); ?></p>
 
-				<!-- Social Media Links -->
+				
 				<br />
-				<p><img src="public/images/location.png" alt="my current location"  width="20"> Vancouver, BC. Canada</p>
-				<p><img src="public/images/mail_icon.png" alt="my current contact mail" width="20"> manuirrazabal@manuirrazabal.com</p>
+				<p><img src="public/images/location.png" alt="my current location"  width="20"> <?php echo $this->lang->line('CON_location'); ?></p>
+				<p><img src="public/images/mail_icon.png" alt="my current contact mail" width="20"> <?php echo $this->lang->line('CON_mail'); ?></p>
 			</div>
 
 			<div class="col-sm-7 col-xs-12">
@@ -141,42 +143,42 @@ $errName	= isset($errName)?$errName:null;
 					</div>
 
 					<div class="form-group">
-						<label for="name" class="col-sm-3">Name</label>
+						<label for="name" class="col-sm-3"><?php echo $this->lang->line('CON_pl_name'); ?></label>
 						 <div class="col-sm-9">
-						 	<input type="text" class="form-control" id="name" name="name"  placeholder="Name">
+						 	<input type="text" class="form-control" id="name" name="name"  placeholder="<?php echo $this->lang->line('CON_pl_name'); ?>">
 						 	<?php echo "<p class='text-danger'>$errName</p>";?>
 						</div>
 						 
 					</div>
 					<div class="form-group">
-						<label for="Email" class="col-sm-3">Email</label>
+						<label for="Email" class="col-sm-3"><?php echo $this->lang->line('CON_pl_email'); ?></label>
 						<div class="col-sm-9">
-							<input type="email" class="form-control" id="Email" name="email" placeholder="Email">
+							<input type="email" class="form-control" id="Email" name="email" placeholder="<?php echo $this->lang->line('CON_pl_email'); ?>">
 							<?php echo "<p class='text-danger'>$errEmail</p>";?>
 						</div>
 						
 					</div>
 					<div class="form-group">
-						<label for="Email" class="col-sm-3">Phone</label>
+						<label for="Email" class="col-sm-3"><?php echo $this->lang->line('CON_pl_phone'); ?></label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="Phone" name="phone" placeholder="Phone Number">
+							<input type="text" class="form-control" id="Phone" name="phone" placeholder="<?php echo $this->lang->line('CON_pl_phone'); ?>">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="Message" class="col-sm-3">Message</label>
+						<label for="Message" class="col-sm-3"><?php echo $this->lang->line('CON_pl_message'); ?></label>
 						<div class="col-sm-9">
-							<textarea name="message" id="Message" class="input-md round form-control" style="height: 84px;" placeholder="Message"></textarea>
+							<textarea name="message" id="Message" class="input-md round form-control" style="height: 84px;" placeholder="<?php echo $this->lang->line('CON_pl_message'); ?>"></textarea>
 							<?php echo "<p class='text-danger'>$errMessage</p>";?>
 						</div>
 					</div>	
 					<div class="form-group">
-						<label for="human" class="col-sm-3">2 + 5 = ?</label>
+						<label for="human" class="col-sm-3"><?php echo $this->lang->line('CON_pl_answer_Q'); ?></label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
+							<input type="text" class="form-control" id="human" name="human" placeholder="<?php echo $this->lang->line('CON_pl_answer'); ?>">
 							<?php echo "<p class='text-danger'>$errHuman</p>";?>
 						</div>
 					</div>			
-					<div class="form-group text-right"><button type="submit" name="submit" lass="btn btn-default">Submit</button></div>
+					<div class="form-group text-right"><button type="submit" name="submit" lass="btn btn-default"><?php echo $this->lang->line('CON_pl_submit'); ?></button></div>
 					
 				</form>
 			</div>

@@ -20,11 +20,11 @@
 
 	<div class="container extra-margin" id="monumento_propiedades">
 		<div class="row">
-			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h1>Monumento Propiedades</h1><br /></div>
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h2><?php echo $this->lang->line('monu_title'); ?></h2><br /></div>
 
 			<div class="col-sm-5 col-xs-12 col-md-5 col-lg-5">
-				<p>Real Estate Company <br /> Location, Santiago, Chile</p>
-				<p></p>
+				<p><?php echo $this->lang->line('monu_description'); ?><br /> <?php echo $this->lang->line('monu_location'); ?></p>
+				<p><?php echo $this->lang->line('monu_website'); ?></p>
 				<br />
 				<p>
 				<!-- Add Description Later. -->
@@ -69,8 +69,8 @@
 	<div class="row extra-margin text-center">
 		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
 			
-			<a href="<?php echo base_url('index');?>" class="pagination"> Index </a>
-			<a href="<?php echo base_url('reye'); ?>" class="pagination"> Next Project  >> </a>
+			<a href="<?php echo base_url('index');?>" class="pagination"><?php echo $this->lang->line('pagination_index'); ?></a>
+			<a href="<?php echo base_url('reye'); ?>" class="pagination"><?php echo $this->lang->line('pagination_next'); ?></a>
 		</div>
 	</div>
 

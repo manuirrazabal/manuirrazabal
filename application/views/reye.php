@@ -1,30 +1,12 @@
-<?php
-/**
- * CodeIgniter
- *
- *
- * @author	Manuel Irrazabal
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
- * @since	Version 1.0.0
- * @filesource
- */
 
 
-
-?>
-
-
-
-	<div class="container extra-margin" id="monumento_propiedades">
+	<div class="container extra-margin" id="reye">
 		<div class="row">
-			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h1>Reye</h1><br /></div>
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h2><?php echo $this->lang->line('reye_title'); ?></h2><br /></div>
 
 			<div class="col-sm-5 col-xs-12 col-md-5 col-lg-5">
-				<p>Building management<br /> Location, Santiago, Chile</p>
-				<p></p>
+				<p><?php echo $this->lang->line('reye_description'); ?><br /> <?php echo $this->lang->line('reye_location'); ?></p>
+				<p><?php echo $this->lang->line('reye_website'); ?></p>
 				<br />
 				<p>
 				<!-- Add Description Later. -->
@@ -66,9 +48,9 @@
 	</div>
 	<div class="row extra-margin text-center">
 		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-			<a href="<?php echo base_url('monumento_propiedades'); ?>" class="pagination"> <<  Back Project</a>
-			<a href="<?php echo base_url('index'); ?>" class="pagination"> Index </a>
-			<a href="<?php echo base_url('xside'); ?>" class="pagination"> Next Project  >> </a>
+			<a href="<?php echo base_url('monumento_propiedades'); ?>" class="pagination"><?php echo $this->lang->line('pagination_back'); ?></a>
+			<a href="<?php echo base_url('index'); ?>" class="pagination"><?php echo $this->lang->line('pagination_index'); ?> </a>
+			<a href="<?php echo base_url('xside'); ?>" class="pagination"><?php echo $this->lang->line('pagination_next'); ?></a>
 		</div>
 	</div>
 	

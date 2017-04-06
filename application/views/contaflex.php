@@ -1,29 +1,12 @@
-<?php
-/**
- * CodeIgniter
- *
- *
- * @author	Manuel Irrazabal
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
- * @since	Version 1.0.0
- * @filesource
- */
 
 
 
-?>
-
-
-
-	<div class="container extra-margin" id="xside">
+	<div class="container extra-margin" id="contaflex">
 		<div class="row">
-			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h1>Contaflex</h1><br /></div>
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h2><?php echo $this->lang->line('conta_title'); ?></h2><br /></div>
 
 			<div class="col-sm-5 col-xs-12 col-md-5 col-lg-5">
-				<p>Accountant System<br /> Location, Santiago, Chile</p>
+				<p><?php echo $this->lang->line('conta_description'); ?><br /> <?php echo $this->lang->line('conta_location'); ?></p>
 				<br />
 				<p>
 				<!-- Add Description Later. -->
@@ -66,9 +49,9 @@
 	</div>
 	<div class="row extra-margin text-center">
 		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-			<a href="<?php echo base_url('xside'); ?>" class="pagination"> <<  Back Project</a>
-			<a href="<?php echo base_url('index'); ?>" class="pagination"> Index </a>
-			<a href="<?php echo base_url('verbo_divino_2012'); ?>" class="pagination"> Next Project  >> </a>
+			<a href="<?php echo base_url('xside'); ?>" class="pagination"> <?php echo $this->lang->line('pagination_back'); ?></a>
+			<a href="<?php echo base_url('index'); ?>" class="pagination"><?php echo $this->lang->line('pagination_index'); ?></a>
+			<a href="<?php echo base_url('verbo_divino_2012'); ?>" class="pagination"><?php echo $this->lang->line('pagination_next'); ?></a>
 		</div>
 	</div>
 	

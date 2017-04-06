@@ -18,16 +18,16 @@
 
 
 
-	<div class="container extra-margin" id="xside">
+	<div class="container extra-margin" id="verbodivino">
 		<div class="row">
-			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h1>Verbo Divino's Library</h1><br /></div>
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><h2><?php echo $this->lang->line('v2015_title'); ?></h2><br /></div>
 
 			<div class="col-sm-5 col-xs-12 col-md-5 col-lg-5">
-				<p>Religious Library<br /> Location, Santiago, Chile</p>
-				
+				<p><?php echo $this->lang->line('v2015_description'); ?><br /> <?php echo $this->lang->line('v2015_location'); ?></p>
+				<p><?php echo $this->lang->line('v2015_website'); ?></p>
 				<br />
 				<p>
-				Website launched on 2015
+				<?php echo $this->lang->line('v2015_detail'); ?>
 				<!-- Add Description Later. -->
 				</p>
 
@@ -36,8 +36,8 @@
 			<div class="col-sm-7 col-xs-12 col-md-7 col-lg-7">
 				<div class="row">
 					<div class="col-sm-4 col-xs-6 col-md-4 col-lg-4">
-						<a class="thumbnail fancybox" rel="ligthbox" href="public/images/verbodivino_preview_600.jpg">
-							<img src="public/images/verbodivino_preview_300.jpg" alt="Verbo Divino" width="300" >
+						<a class="thumbnail fancybox" rel="ligthbox" href="<?php echo base_url(''); ?>public/images/verbodivino_preview_600.jpg">
+							<img src="<?php echo base_url(''); ?>public/images/verbodivino_preview_300.jpg" alt="Verbo Divino" width="300" >
 						</a>
 					</div>
 					
@@ -49,8 +49,8 @@
 	</div>
 	<div class="row extra-margin text-center">
 		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-			<a href="<?php echo base_url('verbo_divino_2012'); ?>" class="pagination"> <<  Back Project</a>
-			<a href="<?php echo base_url('index'); ?>" class="pagination"> Index </a>
+			<a href="<?php echo base_url('verbo_divino_2012'); ?>" class="pagination"><?php echo $this->lang->line('pagination_back'); ?></a>
+			<a href="<?php echo base_url('index'); ?>" class="pagination"><?php echo $this->lang->line('pagination_index'); ?></a>
 			
 		</div>
 	</div>

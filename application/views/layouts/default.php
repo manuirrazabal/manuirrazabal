@@ -36,6 +36,8 @@
 
 
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>public/css/style_webpage.css">
 
 	<script>
